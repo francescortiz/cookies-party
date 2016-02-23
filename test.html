@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Example of cookies party</title>
+    <style>
+    </style>
 </head>
 <body>
 
+<h1>
+    Example cookies page based on Ministerio de Defensa de España.
+</h1>
+<p>
+    Scroll or click anywere and cookies will be accepted.
+</p>
+
+<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="jquery.cookies-party.js"></script>
+<script>
+    $.cookiesParty.message = '<div class="cookies">by browsing this site cookies are considered acknowledged. <a href="">Read more</a>.</div>';
+    $(window).on("cookies_accepted", function() {
+        console.log("Cookies accepted, load analytics or facebook or whatever you need.")
+    });
+</script>
 </body>
 </html>

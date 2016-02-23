@@ -1,9 +1,9 @@
 if (!jQuery.cookiesParty) {
-    (function ($) {
+    jQuery.cookiesParty = {
+        message: ''
+    };
 
-        $.cookiesParty = {
-            message: ''
-        };
+    jQuery(function () {
 
         function createCookie(name, value, days) {
             var expires = "";
@@ -34,14 +34,14 @@ if (!jQuery.cookiesParty) {
 
         function acceptCookies() {
             createCookie('analytics', 'true', 728);
-            $(window).trigger("cookies_accepted").off("scroll click", acceptCookies);
+            jQuery(window).trigger("cookies_accepted").off("scroll click", acceptCookies);
         }
 
         if (analytics == "true") {
-            $(window).trigger("cookies_accepted");
+            jQuery(window).trigger("cookies_accepted");
         } else {
-            $('body').prepend($.cookiesParty.message);
-            $(window).on("scroll click", acceptCookies);
+            jQuery('body').prepend(jQuery.cookiesParty.message);
+            jQuery(window).on("scroll click", acceptCookies);
         }
-    })(jQuery);
+    });
 }
