@@ -11,13 +11,10 @@ Cookies message implementation based on the one in Spanish Ministerio de Justici
 
 ## Options
 
-**$.cookiesParty.message**: (default '') HTML to be appended to the container.
-
-**$.cookiesParty.container**: (default 'body') jQuery selector or object ot use as container. It will be wrapped with jQuery. defaults
-
-**$.cookiesParty.cookieName**: (default 'analytics') HTML to be appended to the container.
-
-**$.cookiesParty.events**: (default "scroll click") Events that trigger cookie acceptance.
+- **$.cookiesParty.message**: (default '') HTML to be appended to the container.
+- **$.cookiesParty.container**: (default 'body') jQuery selector or object ot use as container. It will be wrapped with jQuery. defaults
+- **$.cookiesParty.cookieName**: (default 'analytics') HTML to be appended to the container.
+- **$.cookiesParty.events**: (default "scroll click") Events that trigger cookie acceptance.
 
 Check test.html for a working example.
 
