@@ -2,7 +2,8 @@ if (!jQuery.cookiesParty) {
     jQuery.cookiesParty = {
         message: '',
         container: 'body',
-        cookieName: 'analytics'
+        cookieName: 'analytics',
+        events: "scroll click"
     };
 
     jQuery(function () {
@@ -38,14 +39,14 @@ if (!jQuery.cookiesParty) {
 
         function acceptCookies() {
             createCookie(settings.cookieName, 'true', 728);
-            jQuery(window).trigger("cookies_accepted").off("scroll click", acceptCookies);
+            jQuery(window).trigger("cookies_accepted").off(settings.events, acceptCookies);
         }
 
         if (analytics == "true") {
             jQuery(window).trigger("cookies_accepted");
         } else {
             jQuery(settings.container).prepend(settings.message);
-            jQuery(window).on("scroll click", acceptCookies);
+            jQuery(window).on(settings.events, acceptCookies);
         }
     });
 }
